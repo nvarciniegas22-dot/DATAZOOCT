@@ -1,0 +1,279 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DATAZOOCT - Inicio</title>
+<style>
+/* ===== ESTILO GENERAL ===== */ 
+* { 
+margin: 0; 
+padding: 0; 
+box-sizing: border-box; 
+} 
+html { 
+scroll-behavior: smooth; 
+} 
+body { 
+font-family: 
+Garamond, serif; 
+background-image: url("images.jfif"); 
+background-size: cover; 
+background-position: center; 
+background-attachment: fixed; 
+color: white; 
+} 
+/* ===== ENCABEZADO ===== */ 
+header { 
+background-color: rgba(0, 0, 0, 0.45); 
+padding: 15px 40px; 
+position: sticky; 
+top: 0; 
+z-index: 1000; 
+box-shadow: 0 3px 10px rgba(0,0,0,0.3); 
+} 
+/* ===== LOGO ===== */ 
+.logo { 
+position: absolute; 
+top: 10px; 
+right: 25px; 
+width: 90px; 
+height: auto; 
+} 
+/* ===== TITULO ===== */ 
+.titulo {
+text-align: center; 
+font-size: 65px; 
+color: white; 
+letter-spacing: 5px; 
+margin-top: 25px; 
+text-shadow: 3px 3px 5px black; 
+} 
+.subtitulo { 
+text-align: center; 
+color: white; 
+font-size: 20px; 
+margin-top: 5px; 
+letter-spacing: 2px; 
+} 
+/* ===== MENÚ ===== */ 
+nav { 
+display: flex; 
+justify-content: center; 
+margin-top: 20px; 
+} 
+nav ul { 
+list-style: none; 
+display: flex; 
+gap: 12px; 
+} 
+nav ul li {
+    background-color: white;
+    border: 2px solid #0000CC;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+nav ul li a {
+    color: black;
+    display: block;
+    padding: 10px 18px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Al pasar el mouse */
+nav ul li:hover {
+    background-color: #0000CC;
+    transform: translateY(-3px);
+}
+
+nav ul li:hover a {
+    color: white;
+}
+/* ===== CONTENEDOR PRINCIPAL ===== */ 
+.contenedor { 
+width: 85%; 
+max-width: 1100px; 
+margin: 60px auto; 
+} 
+/* ===== SECCIONES ===== */ 
+section { 
+background-color: rgba(255, 255, 255, 0.92); 
+color: black; 
+margin-bottom: 50px; 
+padding: 35px; 
+border-radius: 18px; 
+box-shadow: 0 5px 20px rgba(0,0,0,0.35); 
+min-height: 250px; 
+} 
+section h2 { 
+color: black; 
+text-align: center; 
+font-size: 35px; 
+margin-bottom: 25px; 
+} 
+.contenido { 
+display: flex; 
+align-items: center; 
+gap: 30px; 
+} 
+.contenido img { 
+width: 160px;
+height: 160px; 
+object-fit: contain; 
+} 
+.contenido p { 
+font-size: 20px; 
+line-height: 1.6; 
+text-align: justify; 
+} 
+/* ===== CONTACTO ===== */ 
+.contacto { 
+text-align: center; 
+} 
+.contacto p { 
+font-size: 21px; 
+line-height: 2; 
+} 
+/* ===== PIE DE PÁGINA ===== */ 
+footer {
+background-color: rgba(0,0,0,0.65); 
+text-align: center; 
+padding: 20px; 
+font-size: 17px; 
+} 
+/* ===== RESPONSIVE ===== */ 
+@media (max-width: 700px) { 
+.titulo { font-size: 40px; 
+} 
+.logo { 
+width: 65px; 
+}
+nav ul { 
+flex-direction: column; 
+align-items: center; 
+} 
+.contenido { 
+flex-direction: column; 
+text-align: center; 
+} 
+section {
+ padding: 25px; 
+} 
+} 
+</style> 
+</head> 
+<body> 
+<!-- ===== ENCABEZADO ===== --> 
+<header> 
+<img src="LOGO.jpeg" class="logo"> 
+<h1 class="titulo">DATAZOOCT</h1> 
+<p class="subtitulo"> Datos que tranforman la producción animal</p> 
+<!-- ===== MENÚ ===== --> 
+<nav> 
+<ul> 
+<li> 
+<a href="MISIONYVISION.HTML">MISIÓN Y VISIÓN</a> 
+</li> 
+<li> 
+<a href="NUESTROSVALORES.HTML">NUESTROS VALORES</a> 
+</li> 
+<li> 
+<a href="SERVICIOS.HTML">SERVICIOS</a> 
+</li> 
+</ul> 
+</nav> 
+</header> 
+<!-- ===== CONTENIDO ===== --> 
+<main class="contenedor"> 
+<!-- ===== QUIENES SOMOS ===== --> 
+<section id="objetivo"> 
+<h2>¿QUIENES SOMOS?</h2>
+ 
+<div class="contenido"> 
+<img src="SOMOS.jpeg"> <p> Somos una empresa dedicada a la prestación del servicio de informática aplicativa para todos los sistemas productivos para poder ayudar a los pequeños y medianos productores asistiendo los en análisis de datos de cada uno de los sistemas que los productores manejan haciendo que puedan tomar mejores decisiones a la hora de actuar sin miedo de perder dinero y rentabilidad.
+
+Nuestro propósito es convertir todo tipo de información en datos útiles que le puedan ayudar al productor a mejorar productividad, reducción de costos y la optimización de los procesos.</i>. </p> </div> 
+</section> 
+<!-- ===== PIE DE PÁGINA ===== --> 
+<footer> 
+<div class="footer-contenido">
+
+        <p>🌐 <b>DATAZOOCT.COM</b></p>
+
+        <p>📧 <b>DATAZOOCT@GMAIL.COM</b></p>
+
+        <p>📱 <b>302 446 3038 &nbsp; | &nbsp; 313 218 4643 &nbsp; | &nbsp; 322 481 9532</b></p>
+
+        <p class="instagram">
+            <a href="https://www.instagram.com/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png"
+                     width="25"
+                     height="25">
+            </a>
+
+            <b>@DATAZOOCT</b>
+        </p>
+
+    </div>
+
+    <p class="copyright">
+        DATAZOOCT © 2026 | Proyecto académico de Zootecnia
+    </p>
+
+</footer>
+
+<style>
+
+footer {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+.footer-contenido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-contenido p {
+    margin: 5px;
+    font-size: 17px;
+}
+
+.footer-contenido a {
+    color: white;
+    text-decoration: none;
+}
+
+.instagram {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.instagram img {
+    width: 25px;
+    height: 25px;
+    transition: 0.3s;
+}
+
+.instagram img:hover {
+    transform: scale(1.2);
+}
+
+.copyright {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.4);
+    font-size: 14px;
+}
+</footer> 
+</body> 
+</html>

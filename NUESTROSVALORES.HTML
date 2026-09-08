@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DATAZOOCT - Nuestros Valores</title>
+
+<style>
+
+/* ===== ESTILO GENERAL ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Garamond, serif;
+
+    background-image: url("images.jfif");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: white;
+}
+
+
+/* ===== ENCABEZADO ===== */
+
+header {
+    background-color: rgba(0, 0, 0, 0.45);
+
+    padding: 15px 40px;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+
+/* ===== LOGO ===== */
+
+.logo {
+    position: absolute;
+
+    top: 10px;
+    right: 25px;
+
+    width: 90px;
+    height: auto;
+}
+
+
+/* ===== TITULO ===== */
+
+.titulo {
+    text-align: center;
+
+    font-size: 65px;
+
+    color: white;
+
+    letter-spacing: 5px;
+
+    margin-top: 25px;
+
+    text-shadow: 3px 3px 5px black;
+}
+
+
+.subtitulo {
+    text-align: center;
+
+    color: white;
+
+    font-size: 20px;
+
+    margin-top: 5px;
+
+    letter-spacing: 2px;
+}
+
+
+/* ===== MENÚ ===== */
+
+nav {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 20px;
+}
+
+nav ul {
+    list-style: none;
+
+    display: flex;
+
+    gap: 12px;
+}
+
+nav ul li {
+    background-color: white;
+
+    border: 2px solid #0000CC;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+nav ul li a {
+    color: black;
+
+    display: block;
+
+    padding: 10px 18px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+/* ===== EFECTO DEL MENÚ ===== */
+
+nav ul li:hover {
+    background-color: #0000CC;
+
+    transform: translateY(-3px);
+}
+
+nav ul li:hover a {
+    color: white;
+}
+
+
+/* ===== CONTENEDOR DE VALORES ===== */
+
+.valores {
+    width: 85%;
+
+    max-width: 1100px;
+
+    margin: 60px auto;
+}
+
+
+/* ===== TITULO DE VALORES ===== */
+
+.titulo-valores {
+    text-align: center;
+
+    font-size: 42px;
+
+    color: white;
+
+    text-shadow: 3px 3px 5px black;
+
+    margin-bottom: 10px;
+}
+
+.descripcion-valores {
+    text-align: center;
+
+    font-size: 20px;
+
+    color: white;
+
+    margin-bottom: 40px;
+
+    text-shadow: 2px 2px 4px black;
+}
+
+
+/* ===== CUADRÍCULA DE VALORES ===== */
+
+.grid-valores {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+/* ===== TARJETAS ===== */
+
+.valor {
+    background-color: rgba(255, 255, 255, 0.95);
+
+    color: black;
+
+    border-radius: 18px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.35);
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+/* ===== EFECTO AL PASAR EL MOUSE ===== */
+
+.valor:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.45);
+}
+
+
+/* ===== ENCABEZADO DE LA TARJETA ===== */
+
+.valor summary {
+    list-style: none;
+
+    padding: 25px 30px;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    color: #164d32;
+
+    border-left: 8px solid #54a832;
+
+    position: relative;
+}
+
+
+/* Quitar la flecha original */
+
+.valor summary::-webkit-details-marker {
+    display: none;
+}
+
+
+/* ===== ICONO + ===== */
+
+.valor summary::after {
+    content: "+";
+
+    position: absolute;
+
+    right: 25px;
+
+    font-size: 30px;
+
+    color: #54a832;
+
+    transition: 0.3s;
+}
+
+
+/* Cambiar + por - cuando está abierto */
+
+.valor[open] summary::after {
+    content: "−";
+}
+
+
+/* ===== TEXTO DESPLEGABLE ===== */
+
+.descripcion {
+    padding: 0 30px 25px 38px;
+
+    font-size: 18px;
+
+    line-height: 1.5;
+
+    text-align: justify;
+
+    color: #333;
+}
+
+
+/* ===== TARJETA DE SERVICIO CENTRADA ===== */
+
+.servicio {
+    grid-column: 1 / 3;
+
+    width: 50%;
+
+    margin: 0 auto;
+}
+
+
+/* ===== FOOTER ===== */
+
+footer {
+    background-color: rgba(0, 0, 0, 0.75);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+
+    margin-top: 40px;
+}
+
+
+.footer-contenido {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+}
+
+
+.footer-contenido p {
+    margin: 5px;
+
+    font-size: 17px;
+}
+
+
+.footer-contenido a {
+    color: white;
+
+    text-decoration: none;
+}
+
+
+.instagram {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.instagram img {
+    width: 25px;
+
+    height: 25px;
+
+    transition: 0.3s;
+}
+
+
+.instagram img:hover {
+    transform: scale(1.2);
+}
+
+
+.copyright {
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid rgba(255,255,255,0.4);
+
+    font-size: 14px;
+}
+
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 700px) {
+
+    .titulo {
+        font-size: 40px;
+    }
+
+    .logo {
+        width: 65px;
+    }
+
+    nav ul {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .grid-valores {
+        grid-template-columns: 1fr;
+    }
+
+    .servicio {
+        grid-column: auto;
+
+        width: 100%;
+    }
+
+    .titulo-valores {
+        font-size: 32px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ===== ENCABEZADO ===== -->
+
+<header>
+
+    <img src="LOGO.jpeg" class="logo">
+
+    <h1 class="titulo">DATAZOOCT</h1>
+
+    <p class="subtitulo">
+        Datos que transforman la producción animal
+    </p>
+
+
+    <!-- ===== MENÚ ===== -->
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="MISIONYVISION.HTML">
+                    MISIÓN Y VISIÓN
+                </a>
+            </li>
+
+            <li>
+                <a href="NUESTROSVALORES.HTML">
+                    NUESTROS VALORES
+                </a>
+            </li>
+
+            <li>
+                <a href="SERVICIOS.HTML">
+                    SERVICIOS
+                </a>
+            </li>
+            <li>
+                <a href="INCIO2.HTML">
+                    INICIO
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ===== NUESTROS VALORES ===== -->
+
+<main class="valores">
+
+    <h2 class="titulo-valores">
+        NUESTROS VALORES
+    </h2>
+
+    <p class="descripcion-valores">
+        La manera en que construimos confianza.
+    </p>
+
+
+
+    <div class="grid-valores">
+
+
+        <!-- ===== INTEGRIDAD ===== -->
+
+        <details class="valor">
+
+            <summary>
+                INTEGRIDAD
+            </summary>
+
+            <div class="descripcion">
+
+                <p>
+                    Nos comportamos con honestidad, transparencia y
+                    ética en cada servicio. Trabajamos de manera
+                    responsable y clara, brindando información confiable
+                    para que nuestros clientes puedan tomar decisiones
+                    seguras para sus sistemas productivos.
+                </p>
+
+            </div>
+
+        </details>
+
+
+
+        <!-- ===== RESPONSABILIDAD ===== -->
+
+        <details class="valor">
+
+            <summary>
+                RESPONSABILIDAD
+            </summary>
+
+            <div class="descripcion">
+
+                <p>
+                    Cumplimos nuestros compromisos y asumimos con
+                    seriedad los resultados de nuestro trabajo.
+                    Analizamos la información de cada sistema productivo
+                    con cuidado, buscando entregar soluciones útiles
+                    y confiables para nuestros clientes.
+                </p>
+
+            </div>
+
+        </details>
+
+
+
+        <!-- ===== RESPETO ===== -->
+
+        <details class="valor">
+
+            <summary>
+                RESPETO
+            </summary>
+
+            <div class="descripcion">
+
+                <p>
+                    Valoramos a nuestros clientes, colaboradores,
+                    productores y aliados, promoviendo relaciones
+                    basadas en un trato digno y profesional.
+                    Escuchamos diferentes opiniones y reconocemos las
+                    necesidades particulares de cada productor.
+                </p>
+
+            </div>
+
+        </details>
+
+
+
+        <!-- ===== COMPROMISO ===== -->
+
+        <details class="valor">
+
+            <summary>
+                COMPROMISO
+            </summary>
+
+            <div class="descripcion">
+
+                <p>
+                    Nos involucramos en las necesidades de nuestros
+                    clientes y buscamos soluciones que generen
+                    resultados reales. Nuestro compromiso es acompañar
+                    al productor en el análisis de sus datos para
+                    contribuir al mejoramiento de sus procesos.
+                </p>
+
+            </div>
+
+        </details>
+
+
+
+        <!-- ===== CALIDAD ===== -->
+
+        <details class="valor">
+
+            <summary>
+                CALIDAD
+            </summary>
+
+            <div class="descripcion">
+
+                <p>
+                    Ofrecemos información confiable, servicios
+                    profesionales y soluciones que aporten valor a los
+                    sistemas productivos. Buscamos que nuestros análisis
+                    sean claros, útiles y adecuados para las necesidades
+                    de cada cliente.
+                </p>
+
+            </div>
+
+        </details>
+
+
+
+        <!-- ===== INNOVACIÓN ===== -->
+
+        <details class="valor">
+
+            <summary>
+                INNOVACIÓN
+            </summary>
+
+            <div class="descripcion">
+
+                <p>
+                    Aplicamos tecnología para avanzar. Utilizamos
+                    herramientas informáticas y análisis de datos para
+                    encontrar nuevas formas de mejorar la productividad,
+                    optimizar procesos y facilitar la toma de decisiones
+                    dentro de los sistemas productivos.
+                </p>
+
+            </div>
+
+        </details>
+
+
+
+        <!-- ===== SERVICIO ===== -->
+
+        <details class="valor servicio">
+
+            <summary>
+                SERVICIO
+            </summary>
+
+            <div class="descripcion">
+
+                <p>
+                    Escuchamos a nuestros clientes, comprendemos sus
+                    necesidades y brindamos una atención cercana,
+                    oportuna y profesional. Nuestro objetivo es
+                    acompañarlos y ofrecer soluciones que realmente
+                    respondan a las necesidades de sus sistemas
+                    productivos.
+                </p>
+
+            </div>
+
+        </details>
+
+
+    </div>
+
+</main>
+
+
+
+<!-- ===== FOOTER ===== -->
+
+<footer>
+
+    <div class="footer-contenido">
+
+        <p>
+            🌐 <b>DATAZOOCT.COM</b>
+        </p>
+
+        <p>
+            📧 <b>DATAZOOCT@GMAIL.COM</b>
+        </p>
+
+        <p>
+            📱 <b>
+                302 446 3038 |
+                313 218 4643 |
+                322 481 9532
+            </b>
+        </p>
+
+
+        <p class="instagram">
+
+            <a href="https://www.instagram.com/"
+               target="_blank">
+
+                <img
+                    src="https://cdn-icons-png.flaticon.com/512/174/174855.png"
+                    width="25"
+                    height="25"
+                >
+
+            </a>
+
+            <b>@DATAZOOCT</b>
+
+        </p>
+
+    </div>
+
+
+    <p class="copyright">
+
+        DATAZOOCT © 2026 |
+        Proyecto académico de Zootecnia
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

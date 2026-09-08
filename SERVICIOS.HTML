@@ -1,0 +1,1075 @@
+html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DATAZOOCT - Servicios</title>
+
+<style>
+
+/* ===== ESTILO GENERAL ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    font-family: Garamond, serif;
+
+    background-image: url("images.jfif");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: white;
+}
+
+
+/* ===== ENCABEZADO ===== */
+
+header {
+
+    background-color: rgba(0, 0, 0, 0.45);
+
+    padding: 15px 40px;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+
+/* ===== LOGO ===== */
+
+.logo {
+
+    position: absolute;
+
+    top: 10px;
+    right: 25px;
+
+    width: 90px;
+    height: auto;
+}
+
+
+/* ===== TITULO ===== */
+
+.titulo {
+
+    text-align: center;
+
+    font-size: 65px;
+
+    color: white;
+
+    letter-spacing: 5px;
+
+    margin-top: 25px;
+
+    text-shadow: 3px 3px 5px black;
+}
+
+
+.subtitulo {
+
+    text-align: center;
+
+    color: white;
+
+    font-size: 20px;
+
+    margin-top: 5px;
+
+    letter-spacing: 2px;
+}
+
+
+/* ===== MENÚ ===== */
+
+nav {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 20px;
+}
+
+
+nav ul {
+
+    list-style: none;
+
+    display: flex;
+
+    gap: 12px;
+}
+
+
+nav ul li {
+
+    background-color: white;
+
+    border: 2px solid #0000CC;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+
+nav ul li a {
+
+    color: black;
+
+    display: block;
+
+    padding: 10px 18px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+/* ===== EFECTO DEL MENÚ ===== */
+
+nav ul li:hover {
+
+    background-color: #0000CC;
+
+    transform: translateY(-3px);
+}
+
+
+nav ul li:hover a {
+
+    color: white;
+}
+
+
+/* ================================================= */
+/* ===== CONTENEDOR DE SERVICIOS =================== */
+/* ================================================= */
+
+.servicios {
+
+    width: 85%;
+
+    max-width: 1100px;
+
+    margin: 60px auto;
+}
+
+
+/* ===== TITULO DE SERVICIOS ===== */
+
+.titulo-servicios {
+
+    text-align: center;
+
+    font-size: 42px;
+
+    color: white;
+
+    text-shadow: 3px 3px 5px black;
+
+    margin-bottom: 10px;
+}
+
+
+.descripcion-servicios {
+
+    text-align: center;
+
+    font-size: 20px;
+
+    color: white;
+
+    margin-bottom: 40px;
+
+    text-shadow: 2px 2px 4px black;
+}
+
+
+/* ================================================= */
+/* ===== CUADRÍCULA ================================ */
+/* ================================================= */
+
+.grid-servicios {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+/* ================================================= */
+/* ===== TARJETAS ================================== */
+/* ================================================= */
+
+.servicio {
+
+    background-color: rgba(255, 255, 255, 0.96);
+
+    color: black;
+
+    border-radius: 18px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.35);
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.servicio:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.45);
+}
+
+
+/* ================================================= */
+/* ===== TITULO DE CADA SERVICIO =================== */
+/* ================================================= */
+
+.servicio summary {
+
+    list-style: none;
+
+    padding: 25px 30px;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    color: #164d32;
+
+    border-left: 8px solid #54a832;
+
+    position: relative;
+}
+
+
+/* Quitar flecha original */
+
+.servicio summary::-webkit-details-marker {
+
+    display: none;
+}
+
+
+/* ================================================= */
+/* ===== ICONO + =================================== */
+/* ================================================= */
+
+.servicio summary::after {
+
+    content: "+";
+
+    position: absolute;
+
+    right: 25px;
+
+    font-size: 30px;
+
+    color: #54a832;
+
+    transition: 0.3s;
+}
+
+
+/* Cuando está abierto cambia a - */
+
+.servicio[open] summary::after {
+
+    content: "−";
+}
+
+
+/* ================================================= */
+/* ===== SUBTITULO ================================= */
+/* ================================================= */
+
+.subtitulo-servicio {
+
+    display: block;
+
+    font-size: 17px;
+
+    font-weight: normal;
+
+    color: #555;
+
+    margin-top: 7px;
+
+    padding-right: 35px;
+}
+
+
+/* ================================================= */
+/* ===== INFORMACIÓN DESPLEGABLE =================== */
+/* ================================================= */
+
+.contenido-servicio {
+
+    padding: 5px 30px 30px 38px;
+
+    color: #333;
+
+    font-size: 18px;
+
+    line-height: 1.5;
+}
+
+
+.contenido-servicio p {
+
+    margin-bottom: 12px;
+}
+
+
+.contenido-servicio strong {
+
+    color: #164d32;
+
+    font-size: 19px;
+}
+
+
+/* ================================================= */
+/* ===== PRECIO ==================================== */
+/* ================================================= */
+
+.precio {
+
+    margin-top: 18px;
+
+    padding: 12px 15px;
+
+    background-color: #eef7e9;
+
+    border-radius: 10px;
+
+    border-left: 5px solid #54a832;
+
+    font-weight: bold;
+
+    color: #164d32;
+}
+
+
+/* ================================================= */
+/* ===== FOOTER ==================================== */
+/* ================================================= */
+
+footer {
+
+    background-color: rgba(0, 0, 0, 0.75);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+
+    margin-top: 40px;
+}
+
+
+.footer-contenido {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+}
+
+
+.footer-contenido p {
+
+    margin: 5px;
+
+    font-size: 17px;
+}
+
+
+.footer-contenido a {
+
+    color: white;
+
+    text-decoration: none;
+}
+
+
+.instagram {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.instagram img {
+
+    width: 25px;
+
+    height: 25px;
+
+    transition: 0.3s;
+}
+
+
+.instagram img:hover {
+
+    transform: scale(1.2);
+}
+
+
+.copyright {
+
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid rgba(255,255,255,0.4);
+
+    font-size: 14px;
+}
+
+
+/* ================================================= */
+/* ===== RESPONSIVE ================================ */
+/* ================================================= */
+
+@media (max-width: 700px) {
+
+    .titulo {
+
+        font-size: 40px;
+    }
+
+
+    .logo {
+
+        width: 65px;
+    }
+
+
+    nav ul {
+
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+
+    .grid-servicios {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .titulo-servicios {
+
+        font-size: 32px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================================================= -->
+<!-- ===== ENCABEZADO ================================ -->
+<!-- ================================================= -->
+
+<header>
+
+
+    <!-- LOGO -->
+
+    <img src="LOGO.jpeg" class="logo">
+
+
+    <!-- TITULO -->
+
+    <h1 class="titulo">
+
+        DATAZOOCT
+
+    </h1>
+
+
+    <!-- SUBTITULO -->
+
+    <p class="subtitulo">
+
+        Datos que transforman la producción animal
+
+    </p>
+
+
+    <!-- ================================================= -->
+    <!-- ===== MENÚ ====================================== -->
+    <!-- ================================================= -->
+
+    <nav>
+
+        <ul>
+
+
+            <li>
+
+                <a href="MISIONYVISION.HTML">
+
+                    MISIÓN Y VISIÓN
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="NUESTROSVALORES.HTML">
+
+                    NUESTROS VALORES
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="SERVICIOS.HTML">
+
+                    SERVICIOS
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="INCIO2.HTML">
+
+                    INICIO
+
+                </a>
+
+            </li>
+
+
+        </ul>
+
+    </nav>
+
+
+</header>
+
+
+
+<!-- ================================================= -->
+<!-- ===== SERVICIOS ================================= -->
+<!-- ================================================= -->
+
+<main class="servicios">
+
+
+    <h2 class="titulo-servicios">
+
+        NUESTROS SERVICIOS
+
+    </h2>
+
+
+    <p class="descripcion-servicios">
+
+        Soluciones digitales para mejorar la gestión y productividad de los sistemas pecuarios.
+
+    </p>
+
+
+
+    <!-- ================================================= -->
+    <!-- ===== TARJETAS ================================== -->
+    <!-- ================================================= -->
+
+    <div class="grid-servicios">
+
+
+        <!-- ================================================= -->
+        <!-- ===== DIGITALIZACIÓN ============================ -->
+        <!-- ================================================= -->
+
+        <details class="servicio">
+
+            <summary>
+
+                DIGITALIZACIÓN
+
+                <span class="subtitulo-servicio">
+
+                    Registros, formularios y bases de datos pecuarias.
+
+                </span>
+
+            </summary>
+
+
+            <div class="contenido-servicio">
+
+
+                <p>
+
+                    <strong>¿Qué se realiza?</strong>
+
+                </p>
+
+
+                <p>
+
+                    Se pasará toda la información de la finca de archivos físicos o digitales a una base de datos completa, organizada y fácil de consultar.
+
+                    De esta manera, el productor podrá visualizar y consultar la información de su sistema productivo en cualquier momento.
+
+                </p>
+
+
+                <div class="precio">
+
+                    Precio estimado: $450.000 - $1.000.000
+
+                </div>
+
+
+            </div>
+
+        </details>
+
+
+
+        <!-- ================================================= -->
+        <!-- ===== ANÁLISIS PRODUCTIVO ======================= -->
+        <!-- ================================================= -->
+
+        <details class="servicio">
+
+            <summary>
+
+                ANÁLISIS PRODUCTIVO
+
+                <span class="subtitulo-servicio">
+
+                    Producción, peso, conversión e indicadores.
+
+                </span>
+
+            </summary>
+
+
+            <div class="contenido-servicio">
+
+
+                <p>
+
+                    <strong>¿Qué se realiza?</strong>
+
+                </p>
+
+
+                <p>
+
+                    Se realizan análisis de los principales indicadores del sistema productivo, incluyendo pesos, producción, reproducción, producción de leche, conversión alimenticia y otros parámetros de interés.
+
+                </p>
+
+
+                <div class="precio">
+
+                    Precio estimado: $500.000 - $1.200.000
+
+                </div>
+
+
+            </div>
+
+        </details>
+
+
+
+        <!-- ================================================= -->
+        <!-- ===== DASHBOARDS ================================ -->
+        <!-- ================================================= -->
+
+        <details class="servicio">
+
+            <summary>
+
+                DASHBOARDS
+
+                <span class="subtitulo-servicio">
+
+                    Visualización de datos e indicadores clave.
+
+                </span>
+
+            </summary>
+
+
+            <div class="contenido-servicio">
+
+
+                <p>
+
+                    <strong>¿Qué se realiza?</strong>
+
+                </p>
+
+
+                <p>
+
+                    Se crea un panel especializado donde el propietario pueda visualizar de manera clara y organizada todos los datos e indicadores importantes de su sistema productivo.
+
+                    Esto facilita el seguimiento y la toma de decisiones.
+
+                </p>
+
+
+                <div class="precio">
+
+                    Precio estimado: $1.200.000 - $2.500.000
+
+                </div>
+
+
+            </div>
+
+        </details>
+
+
+
+        <!-- ================================================= -->
+        <!-- ===== INFORMES ================================== -->
+        <!-- ================================================= -->
+
+        <details class="servicio">
+
+            <summary>
+
+                INFORMES
+
+                <span class="subtitulo-servicio">
+
+                    Análisis técnico y presentación de resultados.
+
+                </span>
+
+            </summary>
+
+
+            <div class="contenido-servicio">
+
+
+                <p>
+
+                    <strong>¿Qué se realiza?</strong>
+
+                </p>
+
+
+                <p>
+
+                    Se realizará un informe detallado del sistema productivo, presentando los principales resultados encontrados y dejando recomendaciones orientadas a mejorar el funcionamiento de la finca.
+
+                </p>
+
+
+                <div class="precio">
+
+                    Precio estimado: $450.000 - $600.000
+
+                </div>
+
+
+            </div>
+
+        </details>
+
+
+
+        <!-- ================================================= -->
+        <!-- ===== CONSULTORÍA =============================== -->
+        <!-- ================================================= -->
+
+        <details class="servicio">
+
+            <summary>
+
+                CONSULTORÍA
+
+                <span class="subtitulo-servicio">
+
+                    Diagnóstico y acompañamiento tecnológico.
+
+                </span>
+
+            </summary>
+
+
+            <div class="contenido-servicio">
+
+
+                <p>
+
+                    <strong>¿Qué se realiza?</strong>
+
+                </p>
+
+
+                <p>
+
+                    Se realiza una visita a la finca del productor para identificar los principales problemas o necesidades del sistema productivo.
+
+                    A partir del diagnóstico se generan indicadores y recomendaciones que permitan mejorar los procesos.
+
+                </p>
+
+
+                <div class="precio">
+
+                    Precio estimado: $500.000 - $1.200.000
+
+                </div>
+
+
+            </div>
+
+        </details>
+
+
+
+        <!-- ================================================= -->
+        <!-- ===== AUTOMATIZACIÓN ============================ -->
+        <!-- ================================================= -->
+
+        <details class="servicio">
+
+            <summary>
+
+                AUTOMATIZACIÓN
+
+                <span class="subtitulo-servicio">
+
+                    Reportes, alertas y procesos digitales.
+
+                </span>
+
+            </summary>
+
+
+            <div class="contenido-servicio">
+
+
+                <p>
+
+                    <strong>¿Qué se realiza?</strong>
+
+                </p>
+
+
+                <p>
+
+                    Se automatizan los reportes que recibirá el productor, incluyendo alertas, registros y procesos digitales.
+
+                    Esto permite recibir información de manera organizada y oportuna para facilitar el seguimiento del sistema productivo.
+
+                </p>
+
+
+                <div class="precio">
+
+                    Precio estimado: $1.200.000 - $3.000.000
+
+                </div>
+
+
+            </div>
+
+        </details>
+
+
+    </div>
+
+</main>
+
+
+
+<!-- ================================================= -->
+<!-- ===== FOOTER ==================================== -->
+<!-- ================================================= -->
+
+<footer>
+
+
+    <div class="footer-contenido">
+
+
+        <p>
+
+            🌐 <b>DATAZOOCT.COM</b>
+
+        </p>
+
+
+        <p>
+
+            📧 <b>DATAZOOCT@GMAIL.COM</b>
+
+        </p>
+
+
+        <p>
+
+            📱 <b>
+
+                302 446 3038 |
+                313 218 4643 |
+                322 481 9532
+
+            </b>
+
+        </p>
+
+
+        <p class="instagram">
+
+
+            <a href="https://www.instagram.com/"
+               target="_blank">
+
+
+                <img
+                    src="https://cdn-icons-png.flaticon.com/512/174/174855.png"
+                    width="25"
+                    height="25"
+                >
+
+
+            </a>
+
+
+            <b>@DATAZOOCT</b>
+
+
+        </p>
+
+
+    </div>
+
+
+    <p class="copyright">
+
+        DATAZOOCT © 2026 |
+
+        Proyecto académico de Zootecnia
+
+    </p>
+
+
+</footer>
+
+
+
+<!-- ================================================= -->
+<!-- ===== JAVASCRIPT ================================ -->
+<!-- ================================================= -->
+
+<script>
+
+
+/*
+
+    ESTE CÓDIGO HACE QUE SOLO UN SERVICIO
+    PUEDA ESTAR ABIERTO A LA VEZ.
+
+*/
+
+
+const servicios = document.querySelectorAll(".servicio");
+
+
+servicios.forEach(servicio => {
+
+
+    servicio.addEventListener("toggle", function() {
+
+
+        if (this.open) {
+
+
+            servicios.forEach(otroServicio => {
+
+
+                if (otroServicio !== this) {
+
+                    otroServicio.removeAttribute("open");
+
+                }
+
+
+            });
+
+
+        }
+
+
+    });
+
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,643 @@
+html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DATAZOOCT - Misión y Visión</title>
+
+<style>
+
+/* ===== ESTILO GENERAL ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Garamond, serif;
+
+    background-image: url("images.jfif");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: white;
+}
+
+
+/* ===== ENCABEZADO ===== */
+
+header {
+    background-color: rgba(0, 0, 0, 0.45);
+
+    padding: 15px 40px;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+
+/* ===== LOGO ===== */
+
+.logo {
+    position: absolute;
+
+    top: 10px;
+    right: 25px;
+
+    width: 90px;
+    height: auto;
+}
+
+
+/* ===== TITULO ===== */
+
+.titulo {
+    text-align: center;
+
+    font-size: 65px;
+
+    color: white;
+
+    letter-spacing: 5px;
+
+    margin-top: 25px;
+
+    text-shadow: 3px 3px 5px black;
+}
+
+
+.subtitulo {
+    text-align: center;
+
+    color: white;
+
+    font-size: 20px;
+
+    margin-top: 5px;
+
+    letter-spacing: 2px;
+}
+
+
+/* ===== MENÚ ===== */
+
+nav {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 20px;
+}
+
+nav ul {
+    list-style: none;
+
+    display: flex;
+
+    gap: 12px;
+}
+
+nav ul li {
+    background-color: white;
+
+    border: 2px solid #0000CC;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+nav ul li a {
+    color: black;
+
+    display: block;
+
+    padding: 10px 18px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+/* ===== EFECTO DEL MENÚ ===== */
+
+nav ul li:hover {
+    background-color: #0000CC;
+
+    transform: translateY(-3px);
+}
+
+nav ul li:hover a {
+    color: white;
+}
+
+
+/* ===== CONTENEDOR MISIÓN Y VISIÓN ===== */
+
+.mision-vision {
+    width: 85%;
+
+    max-width: 1100px;
+
+    margin: 60px auto;
+}
+
+
+/* ===== TÍTULO ===== */
+
+.titulo-mision {
+    text-align: center;
+
+    font-size: 42px;
+
+    color: white;
+
+    text-shadow: 3px 3px 5px black;
+
+    margin-bottom: 10px;
+}
+
+
+.descripcion-mision {
+    text-align: center;
+
+    font-size: 20px;
+
+    color: white;
+
+    margin-bottom: 40px;
+
+    text-shadow: 2px 2px 4px black;
+}
+
+
+/* ===== CUADRÍCULA ===== */
+
+.grid-mision {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+/* ===== TARJETAS ===== */
+
+.mision {
+    background-color: rgba(255, 255, 255, 0.95);
+
+    color: black;
+
+    border-radius: 18px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.35);
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+/* ===== EFECTO AL PASAR EL MOUSE ===== */
+
+.mision:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.45);
+}
+
+
+/* ===== ENCABEZADO DE LA TARJETA ===== */
+
+.mision summary {
+    list-style: none;
+
+    padding: 30px;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    color: #164d32;
+
+    border-left: 8px solid #54a832;
+
+    position: relative;
+
+    text-align: center;
+}
+
+
+/* Quitar flecha original */
+
+.mision summary::-webkit-details-marker {
+    display: none;
+}
+
+
+/* ===== SIGNO + ===== */
+
+.mision summary::after {
+
+    content: "+";
+
+    position: absolute;
+
+    right: 25px;
+
+    font-size: 30px;
+
+    color: #54a832;
+
+    transition: 0.3s;
+}
+
+
+/* ===== CAMBIAR + POR - ===== */
+
+.mision[open] summary::after {
+
+    content: "−";
+}
+
+
+/* ===== TEXTO QUE APARECE AL OPRIMIR ===== */
+
+.descripcion {
+
+    padding: 0 35px 30px 40px;
+
+    font-size: 20px;
+
+    line-height: 1.6;
+
+    text-align: justify;
+
+    color: #333;
+}
+
+
+/* ===== ICONOS ===== */
+
+.icono {
+
+    font-size: 45px;
+
+    text-align: center;
+
+    margin-bottom: 15px;
+}
+
+
+/* ===== FOOTER ===== */
+
+footer {
+
+    background-color: rgba(0, 0, 0, 0.75);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+
+    margin-top: 40px;
+}
+
+
+.footer-contenido {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+}
+
+
+.footer-contenido p {
+
+    margin: 5px;
+
+    font-size: 17px;
+}
+
+
+.footer-contenido a {
+
+    color: white;
+
+    text-decoration: none;
+}
+
+
+.instagram {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.instagram img {
+
+    width: 25px;
+
+    height: 25px;
+
+    transition: 0.3s;
+}
+
+
+.instagram img:hover {
+
+    transform: scale(1.2);
+}
+
+
+.copyright {
+
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid rgba(255,255,255,0.4);
+
+    font-size: 14px;
+}
+
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 700px) {
+
+    .titulo {
+        font-size: 40px;
+    }
+
+    .logo {
+        width: 65px;
+    }
+
+    nav ul {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .grid-mision {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo-mision {
+        font-size: 32px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ===== ENCABEZADO ===== -->
+
+<header>
+
+    <img src="LOGO.jpeg" class="logo">
+
+    <h1 class="titulo">
+        DATAZOOCT
+    </h1>
+
+    <p class="subtitulo">
+        Datos que transforman la producción animal
+    </p>
+
+
+    <!-- ===== MENÚ ===== -->
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="MISIONYVISION.HTML">
+                    MISIÓN Y VISIÓN
+                </a>
+            </li>
+
+            <li>
+                <a href="NUESTROSVALORES.HTML">
+                    NUESTROS VALORES
+                </a>
+            </li>
+
+            <li>
+                <a href="SERVICIOS.HTML">
+                    SERVICIOS
+                </a>
+            </li>
+
+            <li>
+                <a href="INCIO2.HTML">
+                    INICIO
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ===== MISIÓN Y VISIÓN ===== -->
+
+<main class="mision-vision">
+
+
+    <h2 class="titulo-mision">
+        MISIÓN Y VISIÓN
+    </h2>
+
+
+    <p class="descripcion-mision">
+        El propósito y el futuro de DATAZOOCT.
+    </p>
+
+
+
+    <div class="grid-mision">
+
+
+        <!-- ===== MISIÓN ===== -->
+
+        <details class="mision">
+
+            <summary>
+
+                <div class="icono">
+                    🎯
+                </div>
+
+                MISIÓN
+
+            </summary>
+
+
+            <div class="descripcion">
+
+                <p>
+
+                    Brindar soluciones productivas a pequeños y
+                    medianos sistemas productivos mediante servicios
+                    informáticos especializados en cada sistema
+                    pecuario, a través del análisis y visualización
+                    de información productiva, reproductiva,
+                    sanitaria y económica.
+
+                    <br><br>
+
+                    De esta manera, buscamos facilitar la toma de
+                    decisiones más rápidas, precisas y rentables
+                    para los productores.
+
+                </p>
+
+            </div>
+
+        </details>
+
+
+
+        <!-- ===== VISIÓN ===== -->
+
+        <details class="mision">
+
+            <summary>
+
+                <div class="icono">
+                    🚀
+                </div>
+
+                VISIÓN
+
+            </summary>
+
+
+            <div class="descripcion">
+
+                <p>
+
+                    Ser una empresa líder y reconocida en el sector
+                    pecuario, destacándonos por brindar servicios
+                    de consultoría zootécnica en los diferentes
+                    sistemas productivos.
+
+                    <br><br>
+
+                    Buscamos ser reconocidos por nuestra innovación,
+                    conocimiento técnico y compromiso con la
+                    productividad, la rentabilidad, el bienestar
+                    animal y la sostenibilidad de los sistemas
+                    productivos.
+
+                </p>
+
+            </div>
+
+        </details>
+
+
+    </div>
+
+</main>
+
+
+
+<!-- ===== FOOTER ===== -->
+
+<footer>
+
+    <div class="footer-contenido">
+
+        <p>
+            🌐 <b>DATAZOOCT.COM</b>
+        </p>
+
+        <p>
+            📧 <b>DATAZOOCT@GMAIL.COM</b>
+        </p>
+
+        <p>
+            📱 <b>
+                302 446 3038 |
+                313 218 4643 |
+                322 481 9532
+            </b>
+        </p>
+
+
+        <p class="instagram">
+
+            <a href="https://www.instagram.com/"
+               target="_blank">
+
+                <img
+                    src="https://cdn-icons-png.flaticon.com/512/174/174855.png"
+                    width="25"
+                    height="25"
+                >
+
+            </a>
+
+            <b>@DATAZOOCT</b>
+
+        </p>
+
+    </div>
+
+
+    <p class="copyright">
+
+        DATAZOOCT © 2026 |
+        Proyecto académico de Zootecnia
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
